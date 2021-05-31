@@ -82,8 +82,7 @@
                 placeholder="Enter Name" />
                 <ErrorMessage name="name" class="text-red-600" />
             </div>
-            <!-- Email -->
-            <!-- <div class="mb-3">
+            <div class="mb-3">
               <label class="inline-block mb-2">Email</label>
               <vee-field type="email" name="email"
                 class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition
@@ -141,7 +140,7 @@
               <label class="inline-block" for="tos_field">Accept terms of service</label>
               <br>
               <ErrorMessage name="tos" class="text-red-600" />
-            </div> -->
+            </div>
             <button type="submit"
               class="block w-full bg-purple-600 text-white py-1.5 px-3 rounded transition
                 hover:bg-purple-700">
