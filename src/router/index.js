@@ -1,7 +1,6 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import { auth } from '@/includes/firebase';
 import Home from '@/views/Home.vue';
-import About from '@/views/About.vue';
 import Manage from '@/views/Manage.vue';
 import Song from '@/views/Song.vue';
 import _404 from '@/views/404.vue';
@@ -11,11 +10,6 @@ const routes = [
     name: 'home',
     path: '/',
     component: Home,
-  },
-  {
-    name: 'about',
-    path: '/about',
-    component: About,
   },
   {
     name: 'manage',
@@ -31,15 +25,16 @@ const routes = [
     component: Song,
   },
   {
-    path: '/:catchAll(.*)*',
+    path: '/:catchAll(.*)',
     component: _404,
   },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
-  linkExactActiveClass: 'text-yellow-500',
+  linkExactActiveClass: 'bg-gray-900',
+  mode: 'history',
 });
 
 router.beforeEach((to, from, next) => {

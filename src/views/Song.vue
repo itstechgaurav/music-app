@@ -20,7 +20,10 @@
         <!-- Song Info -->
         <div class="text-3xl mb-2">{{ currentSong.modefied_name  }}</div>
         <div>
-          From: {{ currentSong.display_name }}
+          {{ $t('song.source') }}: {{ currentSong.display_name }}
+        </div>
+        <div v-if="currentSong?.genre?.trim().length">
+          Genre: {{ currentSong.genre }}
         </div>
       </div>
     </div>
@@ -61,8 +64,7 @@ export default {
         .then((res) => {
           this.currentSong = res.data();
           this.currentSong.songId = this.$route.params.songId;
-        })
-        .catch(console.error);
+        });
     },
   },
   components: {

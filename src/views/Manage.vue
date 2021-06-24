@@ -45,11 +45,9 @@ export default {
   },
   beforeRouteLeave(to, from, next) {
     if (this.isUploading) {
-      const res = window.confirm('Are you sure you want to leave');
-      if (res) {
-        this.$refs.upload.cancelAllTasks();
-        next();
-      }
+      // TODO: implement model to confirm the task
+      this.$refs.upload.cancelAllTasks();
+      next();
     } else {
       next();
     }

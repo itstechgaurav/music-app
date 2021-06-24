@@ -15,13 +15,13 @@
         />
         <ErrorMessage name="email"/>
     </div>
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label class="inline-block mb-2">Age</label>
       <vee-field type="number" name="age"
         class="input-control"
         placeholder="Enter age" />
         <ErrorMessage name="age"/>
-    </div>
+    </div> -->
 
     <div class="mb-3">
       <label class="inline-block mb-2">Password</label>
@@ -43,7 +43,7 @@
         <ErrorMessage name="confirm_password"/>
     </div>
 
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label class="inline-block mb-2">Country</label>
       <vee-field as="select" name="country" class="input-control">
         <option value="USA">USA</option>
@@ -64,7 +64,7 @@
       <label class="inline-block" for="tos_field">Accept terms of service</label>
       <br>
       <ErrorMessage name="tos"/>
-    </div>
+    </div> -->
     <button type="submit"
       class="block w-full bg-purple-600 text-white py-1.5 px-3 rounded transition
         hover:bg-purple-700">
@@ -81,11 +81,11 @@ export default {
       schema: {
         name: 'required|min:3|max:20|alpha_spaces',
         email: 'required|min:3|max:50|email',
-        age: 'required|between:18,100|numeric',
+        // age: 'required|between:18,100|numeric',
         password: 'required:min:5|max:100',
         confirm_password: 'confirmed:@password',
         country: 'required|included:USA,Mexico,Germany',
-        tos: 'required',
+        // tos: 'required',
       },
       formData: {
         country: 'USA',

@@ -11,5 +11,3 @@ for (let i = 0; i <= textArray.length; i += 1) {
   inc -= 1;
   if (inc === 0) break;
 }
-
-console.log(result);

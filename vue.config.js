@@ -1,5 +1,3 @@
-const zlib = require('zlib');
-
 module.exports = {
   pluginOptions: {
     compression: {
@@ -9,7 +7,7 @@ module.exports = {
         include: /\.(js|css|html|svg|json)(\?.*)?$/i,
         compressionOptions: {
           params: {
-            [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+            1: 11,
           },
         },
         minRatio: 0.8,
@@ -20,6 +18,15 @@ module.exports = {
         include: /\.(js|css|html|svg|json)(\?.*)?$/i,
         minRatio: 0.8,
       },
+    },
+    i18n: {
+      locale: 'en',
+      fallbackLocale: 'en',
+      localeDir: 'locales',
+      enableLegacy: true,
+      fullInstall: true,
+      runtimeOnly: false,
+      compositionOnly: true,
     },
   },
 };

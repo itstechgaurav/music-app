@@ -27,7 +27,7 @@
           params: {
             songId: currentSong.songId,
           }
-        }" class="song-title mb-3">{{ currentSong.modefied_name }}</router-link>
+        }" class="song-title mb-3" style="background: #fff !important">{{ currentSong.modefied_name }}</router-link>
       </div>
       <!-- Scrub Container  -->
       <span
@@ -68,7 +68,6 @@ export default {
   methods: {
     ...mapActions(['togglePlay', 'seekTo']),
     seekSongTo($event) {
-      console.log($event);
       const { x, width } = this.$refs.playerSlider.getBoundingClientRect();
       const clickedAt = $event.clientX - x;
       const pointPercentage = clickedAt / width;

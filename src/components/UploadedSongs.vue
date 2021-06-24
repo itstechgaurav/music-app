@@ -152,8 +152,7 @@ export default {
             showEditModel: false,
           });
         });
-      })
-      .catch(console.error);
+      });
   },
 };
 </script>

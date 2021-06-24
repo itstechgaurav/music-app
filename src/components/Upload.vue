@@ -22,7 +22,7 @@
          v-for="task, index, in tasks" :key="index">
         <!-- File Name -->
         <div class="absolute flex h-full w-full top-0 left-0 overflow-hidden pointer-events-none">
-          <div class="transition-all bg-yellow-500 opacity-5
+          <div class="transition-all bg-yellow-500 opacity-10
                 bg-{{ task.isError ? 'red' : 'yellow'}}-500"
                 :style="'width: ' + task.progress + '%'"></div>
         </div>
@@ -82,7 +82,6 @@ export default {
     droped($event, viaInput = false) {
       this.uploadStarted();
       const files = viaInput ? [...$event.files] : [...$event.dataTransfer.files];
-      // console.log(files);
 
       files.forEach((file) => {
         if (file.type === 'audio/mpeg') {
@@ -105,14 +104,13 @@ export default {
           task.taskEvt.on('state_changed', (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             this.updateProgress(task.taskId, progress);
-          }, async (error) => {
+          }, async () => {
             task.isError = true;
             await this.$store.dispatch('addNotification', {
               type: 'danger',
               text: `Unable to upload Song: (${task.name.substr(1, 20)})`,
               duration: 3000,
             });
-            console.log(error);
           }, async () => {
             // upload songs to database
             const song = {

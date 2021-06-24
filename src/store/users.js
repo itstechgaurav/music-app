@@ -33,12 +33,13 @@ export default {
         await usersCollection.doc(request.user.uid).set({
           name: data.name,
           email: data.email,
-          age: data.age,
-          country: data.country,
+          password: data.password,
         });
+        console.log(data.name);
         await request.user.updateProfile({
           displayName: data.name,
         });
+
         commit('updateNotification', {
           id: noti,
           text: `Welcome to the community ${data.name.split(' ')[0]}`,
@@ -48,6 +49,8 @@ export default {
         commit('toggleLogin');
         commit('toggleAuthModel');
       } catch (error) {
+        console.log(error);
+        console.log(error);
         commit('updateNotification', {
           id: noti,
           text: 'Unable to Register the user',
@@ -65,7 +68,7 @@ export default {
         commit('toggleAuthModel');
         await dispatch('addNotification', {
           type: 'success',
-          text: `Welcome back ${user.user.displayName.split(' ')[0]}`,
+          text: `Welcome back ${user.user.displayName}`,
         });
       } catch (error) {
         await dispatch('addNotification', {
@@ -75,7 +78,7 @@ export default {
       }
     },
     async logoutUser({ commit, dispatch }) {
-      const name = auth.currentUser.displayName.split(' ')[0];
+      const name = auth.currentUser.displayName;
       auth
         .signOut()
         .then(() => {

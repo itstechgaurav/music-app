@@ -1,5 +1,5 @@
 <template>
-  <div id="notifcationContainer" class="fixed top-5 right-5 z-50">
+  <div id="notifcationContainer" class="fixed right-5 z-50" style="top: 70px">
     <div
             v-for="notification, index in getNotifications" :key="index"
             class="px-6 py-4 border-0 rounded relative mb-4 bg-emerald-500"

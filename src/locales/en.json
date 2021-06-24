@@ -1,0 +1,17 @@
+{
+  "home": {
+    "subTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et dolor mollis, congue augue non, venenatis elit. Nunc justo eros, suscipit ac aliquet imperdiet, venenatis et sapien. Duis sed magna pulvinar, fringilla lorem eget, ullamcorper urna.",
+    "title": "Listen for Great Music!"
+  },
+  "song": {
+    "comment_count": "No Comment | 1 Comment | { count } Comments",
+    "source": "From"
+  },
+  "nav_links": {
+    "login_register": "Login / Register",
+    "logout": "Logout",
+    "about": "About",
+    "manage": "Manage"
+  }
+
+}

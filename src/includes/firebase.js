@@ -1,7 +1,11 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import firebase from 'firebase/app';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 require('firebase/auth');
+// eslint-disable-next-line import/no-extraneous-dependencies
 require('firebase/firestore');
+// eslint-disable-next-line import/no-extraneous-dependencies
 require('firebase/storage');
 
 const firebaseConfig = {
@@ -19,8 +23,6 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 const { firestore } = firebase;
 const storage = firebase.storage();
-
-// console.log(firebase);
 
 // collections
 
